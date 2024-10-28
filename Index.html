@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wędkarstwo</title>
+  <link rel="icon" href="im/sczupak.png" sizes="16x16">
+<link rel="stylesheet" href="style.css"> 
+<title>Page Title</title>
+</head>
+<body>
+    <div class="footer">
+      <p id="demo"></p>
+      <p>Twórcy: Paweł i Bartosz</p>
+      <div id="visit-count">Liczba wejść: 0</div>
+      <script> // Funkcja, która zwiększa licznik wizyt
+        function updateVisitCount() {
+            let visitCount = localStorage.getItem('visitCount'); 
+            if (!visitCount) {
+                visitCount = 0;
+            }
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visit-count').textContent = `Liczba wejść: ${visitCount}`;
+        }
+        
+        // Wywołaj funkcję przy załadowaniu strony
+        document.addEventListener('DOMContentLoaded', updateVisitCount);
+        </script>
+      <script>
+      document.getElementById("demo").innerHTML =
+      "Szerokość okna: " + window.innerWidth + "px<br>" +
+      "Wysokośc: " + window.innerHeight + "px";
+      
+      </script>
+    </div>
+    <div class="sidenav">
+
+        <a href="index.html" style="border-left: 5px solid #0f4;font-size:26px;">Wędkarstwo</a>
+        <a href="Rzeki.html">Rzeki</a>
+        <a href="Jeziora.html">Jeziora</a>
+        <a href="Morze.html">Morze</a>
+        <a href="Splawik.html">Spławik</a>
+        <a href="Spinning.html">Spinning</a>
+        <a href="Grunt.html">Grunt</a>
+        <a href="Sieci.html">Sieci</a>
+      </div>
+      
+    <div class="content">
+    <h1 style="text-align: center;">This is a Heading</h1> 
+    <p style="text-align: center;">This is a paragraph.</p>
+    <img src="im/sczupak.png" alt="szczupak" class="hover-image">
+    </div>
+
+    <iframe 
+    id="youtube-player" 
+    width="0" 
+    height="0" 
+    src="https://www.youtube.com/embed/r9n2gj0cCo4?enablejsapi=1&autoplay=0&loop=1&playlist=r9n2gj0cCo4" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen 
+    style="display:none;">
+</iframe>
+    
+</body>
+</html>

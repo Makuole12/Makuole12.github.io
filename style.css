@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #02f7ff;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  text-align: center; 
+  z-index: 10;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 175px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.sidenav a:hover {
+  color: white;
+  border-left: 5px solid #0f4;
+}
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 1fr; 
+  grid-template-rows: 1fr auto; 
+  grid-template-areas: 
+    "sidenav content" 
+    "footer footer"; 
+  height: 100vh;
+}
+
+img {
+  float: right;
+  margin-right: 20px; /* Odstęp między obrazem a tekstem */
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+      position: relative;
+      width: 100vw;  /* Pełna szerokość */
+      height: auto;
+      top: 0;
+      padding: 10px 0;
+      background-color: #111;
+      box-sizing: border-box;
+      transition: height 0.3s ease; /* Animacja rozszerzania sidenavu */
+  }
+
+  .sidenav h1 {
+      display: none; /* Ukryj napis "Menu" */
+  }
+ 
+  .sidenav:hover {
+      width: 100vw; /* Szerokość sidenavu po najechaniu */
+     
+  }
+ 
+  .sidenav ul {
+      display: flex;
+      justify-content: space-between; /* Równomierne rozłożenie elementów */
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+  }
+
+  .sidenav li {
+      flex: 1 1 auto; /* Elementy elastyczne, zajmują dostępne miejsce */
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;  /* Centrowanie zawartości */
+  }
+
+  .sidenav img {
+      width: 30px;  /* Jeszcze mniejsze obrazki */
+      height: 30px;
+  }
+
+  .sidenav a {
+      font-size: 12px;  /* Zmniejszony rozmiar czcionki */
+      padding: 0 5px;  /* Mniejsze odstępy między linkami */
+  }
+
+  .content {
+      margin-left: 0;
+      padding-top: 20px;
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .sidenav h1 {
+      display: none; /* Ukryj napis "Menu" */
+  }
+
+  .sidenav ul {
+      justify-content: flex-start; /* Przesunięcie ikon w lewo */
+  }
+
+  .sidenav li {
+      margin-left: 5px; /* Mniejsze marginesy między ikonami */
+  }
+
+  .sidenav img {
+      width: 28px;  /* Mniejsze obrazki */
+      height: 28px;
+  }
+
+  .sidenav a {
+      font-size: 10px; /* Zmniejszony rozmiar czcionki */
+      padding: 3px;  /* Mniejsze odstępy między linkami */
+      height: 60px;  /* Dostosowanie wysokości */
+  }
+
+  .sidenav a:hover {
+      height: 70px; /* Wysokość po najechaniu */
+  }
+
+  .sidenav span {
+      font-size: 9px; /* Zmniejszenie tekstu opisu */
+  }
+}
+
+.hover-image {
+  transition: transform 0.3s, opacity 0.3s; /* Dodaje płynne przejście */
+}
+
+.hover-image:hover {
+  transform: scale(1.075); /* Powiększa obrazek o 10% */
+  opacity: 0.99; /* Zmniejsza przezroczystość do 80% */
+}
